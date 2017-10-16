@@ -2,8 +2,6 @@
 
 <h1>This is our Custom Site</h1>
 	
-<div class="box"></div>
-
 <?php if(have_posts()): ?>
 	<?php while(have_posts()): the_post();?>
 		<h3><?php the_title(); ?></h3>

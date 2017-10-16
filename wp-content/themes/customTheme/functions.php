@@ -19,10 +19,10 @@ add_action('init', 'customThemeSetUp');
 add_theme_support('custom-background');
 $customHeaderSetting = array(
 		'default-image' => '',
-		'width' => 100,
-		'height' => 50,
+		'width' => 1280,
+		'height' => 400,
 		'flex-height' => false,
-		'flex-width' => false,
+		'flex-width' => true,
 		'default-text-color' => '',
 		'header-text' => true,
 		'uploads' => true,

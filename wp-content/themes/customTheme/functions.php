@@ -15,3 +15,30 @@ function customThemeSetUp(){
 }
 
 add_action('init', 'customThemeSetUp');
+
+add_theme_support('custom-background');
+$customHeaderSetting = array(
+		'default-image' => '',
+		'width' => 100,
+		'height' => 50,
+		'flex-height' => false,
+		'flex-width' => false,
+		'default-text-color' => '',
+		'header-text' => true,
+		'uploads' => true,
+		'video' => false
+	);
+add_theme_support('custom-header', $customHeaderSetting);
+add_theme_support('post-thumbnails');
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,3 +16,4 @@
 		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="100%">
 	<?php endif; ?>
 	<?php wp_nav_menu(array('theme_location'=>'primary')); ?>
+	<div class="container">

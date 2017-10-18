@@ -15,12 +15,14 @@ function customThemeSetUp(){
 	add_theme_support('menus');
 	register_nav_menu('primary', 'This is the main navigation, positioned at the top of the page');
 	register_nav_menu('seconday', 'This is the seconday navigation, located at the bottom of the page');
+	register_nav_menu('programmes', 'A navigation bar which shows all our programmes here at yoobee');
 
 }
 
 add_action('init', 'customThemeSetUp');
 
 add_theme_support('custom-background');
+
 $customHeaderSetting = array(
 		'default-image' => '',
 		'width' => 1280,
@@ -50,6 +52,19 @@ function customTheme_sidebar_setup(){
 	));
 }
 add_action('widgets_init', 'customTheme_sidebar_setup');
+
+
+//Customize colours
+function customTheme_customize_colour($wp_customize){
+	//Settings
+	$wp_customize->add_setting('newtheme_text_colour', array(
+		'default' => '#000000',
+		'transport' => 'refresh'
+	));
+
+}
+add_action('customize_register', 'customTheme_customize_colour');
+
 
 
 

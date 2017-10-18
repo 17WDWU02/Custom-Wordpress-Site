@@ -18,10 +18,12 @@ body{
 .front-page .box{
 	background-color: #2980b9;
 }
-.menu-main-nav-container{
+.menu-main-nav-container,
+.menu-programmes-container{
 	background-color: #34495e;
 }
-#menu-main-nav{
+#menu-main-nav,
+#menu-programmes{
 	max-width: 1200px;
     list-style-type: none;
     margin: 0 auto;
@@ -30,11 +32,13 @@ body{
     
 }
 
-#menu-main-nav li {
+#menu-main-nav li,
+#menu-programmes li{
 	float: left;
 }
 
-#menu-main-nav li a{
+#menu-main-nav li a,
+#menu-programmes li a{
     display: block;
     color: white;
     text-align: center;
@@ -42,11 +46,13 @@ body{
     text-decoration: none;
 }
 
-#menu-main-nav li a:hover {
+#menu-main-nav li a:hover ,
+#menu-programmes li a:hover{
     background-color: #2c3e50;
 }
 
-#menu-main-nav li.current-menu-item{
+#menu-main-nav li.current-menu-item,
+#menu-programmes li.current-menu-item={
 	background-color: #95a5a6;
 }
 
@@ -80,4 +86,8 @@ footer #menu-secondary-nav{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+.img-responsive{
+	max-width: 100%;
 }

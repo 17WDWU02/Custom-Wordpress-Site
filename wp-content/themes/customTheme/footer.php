@@ -1,6 +1,6 @@
 	</div>	
 		<footer>
-			<p>This is the footer of our site</p>
+			<p><?php echo get_theme_mod('newTheme_footer_text'); ?></p>
 			<hr>
 			<?php wp_nav_menu(array('theme_location'=>'seconday')); ?>
 		</footer>

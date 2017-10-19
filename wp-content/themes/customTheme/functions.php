@@ -62,10 +62,98 @@ function customTheme_customize_colour($wp_customize){
 		'transport' => 'refresh'
 	));
 
+	$wp_customize->add_setting('newtheme_nav_colour', array(
+		'default' => '#000000',
+		'transport' => 'refresh'
+	));
+
+	$wp_customize->add_setting('newtheme_link_colour', array(
+		'default' => '#000000',
+		'transport' => 'refresh'
+	));
+
+	//Section
+	$wp_customize->add_section('newtheme_text_colour_section', array(
+		'title' => __('Standard Colours', 'New Custom Theme'),
+		'priority' => 30
+	));
+
+	//Add the Control
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'newtheme_text_colour_control', array(
+		'label' => __('Text Colour', 'New Custom Theme'),
+		'section' => 'colors',
+		'settings' => 'newtheme_text_colour',
+	)));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'newtheme_nav_colour_control', array(
+		'label' => __('Navigation Colour', 'New Custom Theme'),
+		'section' => 'colors',
+		'settings' => 'newtheme_nav_colour',
+	)));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'newtheme_link_colour_control', array(
+		'label' => __('Link Colour', 'New Custom Theme'),
+		'section' => 'colors',
+		'settings' => 'newtheme_link_colour',
+	)));
 }
 add_action('customize_register', 'customTheme_customize_colour');
 
 
+
+function newtheme_customize_css(){
+?>
+
+<style type="text/css">
+	p,
+	section,
+	ul li{
+		color: <?php echo get_theme_mod('newtheme_text_colour'); ?>;
+	}
+
+	.menu-main-nav-container, .menu-programmes-container{
+		background-color: <?php echo get_theme_mod('newtheme_nav_colour'); ?>;
+	}
+
+	a:link,
+	a:visited,
+	#menu-main-nav li a, 
+	#menu-programmes li a{
+		color: <?php echo get_theme_mod('newtheme_link_colour'); ?>;
+	}
+
+</style>
+
+
+<?php
+}
+add_action('wp_head', 'newtheme_customize_css');
+
+
+
+
+
+
+function newTheme_footer_text($wp_customize){
+	//Settings
+	$wp_customize->add_setting('newTheme_footer_text', array(
+		'default' => 'This is your footer Text',
+		'transport' => 'refresh'
+	));
+
+	//Section
+	$wp_customize->add_section('newTheme_footer_text_section', array(
+		'title' => 'Footer'
+	));
+
+	//Control
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'newTheme_footer_text_control', array(
+		'label' => 'Footer Text',
+		'section' => 'newTheme_footer_text_section',
+		'settings' => 'newTheme_footer_text'
+	)));
+}
+add_action('customize_register', 'newTheme_footer_text');
 
 
 
